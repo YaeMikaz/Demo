@@ -1,0 +1,171 @@
+import { Product, Category, Banner, FlashSale } from '../types';
+
+// Mock data cho demo
+export const mockBanners: Banner[] = [
+  {
+    id: '1',
+    image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800',
+    title: 'Summer Sale',
+    subtitle: 'Up to 50% Off',
+    ctaText: 'Shop Now',
+    link: '/sale',
+  },
+  {
+    id: '2',
+    image: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800',
+    title: 'New Arrivals',
+    subtitle: 'Fresh Fashion',
+    ctaText: 'Explore',
+    link: '/new',
+  },
+  {
+    id: '3',
+    image: 'https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=800',
+    title: 'Best Sellers',
+    subtitle: 'Trending Now',
+    ctaText: 'View All',
+    link: '/trending',
+  },
+];
+
+export const mockCategories: Category[] = [
+  {
+    id: '1',
+    name: 'Electronics',
+    image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400',
+    productCount: 125,
+  },
+  {
+    id: '2',
+    name: 'Fashion',
+    image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400',
+    productCount: 342,
+  },
+  {
+    id: '3',
+    name: 'Home & Garden',
+    image: 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400',
+    productCount: 89,
+  },
+  {
+    id: '4',
+    name: 'Sports',
+    image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400',
+    productCount: 156,
+  },
+  {
+    id: '5',
+    name: 'Beauty',
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400',
+    productCount: 234,
+  },
+  {
+    id: '6',
+    name: 'Books',
+    image: 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400',
+    productCount: 567,
+  },
+];
+
+export const mockProducts: Product[] = [
+  {
+    id: '1',
+    name: 'Wireless Headphones',
+    price: 299.99,
+    originalPrice: 399.99,
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400',
+    category: 'Electronics',
+    rating: 4.5,
+    reviews: 328,
+    description: 'Premium wireless headphones with noise cancellation',
+    colors: ['Black', 'White', 'Blue'],
+    inStock: true,
+    isFeatured: true,
+    discount: 25,
+  },
+  {
+    id: '2',
+    name: 'Smart Watch',
+    price: 399.99,
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400',
+    category: 'Electronics',
+    rating: 4.8,
+    reviews: 542,
+    description: 'Feature-rich smartwatch with health tracking',
+    colors: ['Silver', 'Black', 'Rose Gold'],
+    inStock: true,
+    isFeatured: true,
+  },
+  {
+    id: '3',
+    name: 'Running Shoes',
+    price: 129.99,
+    originalPrice: 179.99,
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400',
+    category: 'Sports',
+    rating: 4.6,
+    reviews: 892,
+    description: 'Comfortable running shoes for all terrains',
+    sizes: ['7', '8', '9', '10', '11'],
+    colors: ['Black', 'White', 'Red'],
+    inStock: true,
+    discount: 28,
+  },
+  {
+    id: '4',
+    name: 'Leather Backpack',
+    price: 189.99,
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400',
+    category: 'Fashion',
+    rating: 4.7,
+    reviews: 156,
+    description: 'Stylish leather backpack for daily use',
+    colors: ['Brown', 'Black'],
+    inStock: true,
+    isFeatured: true,
+  },
+  {
+    id: '5',
+    name: 'Coffee Maker',
+    price: 79.99,
+    image: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400',
+    category: 'Home & Garden',
+    rating: 4.3,
+    reviews: 234,
+    description: 'Automatic coffee maker with timer',
+    inStock: true,
+  },
+  {
+    id: '6',
+    name: 'Yoga Mat',
+    price: 49.99,
+    originalPrice: 69.99,
+    image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400',
+    category: 'Sports',
+    rating: 4.4,
+    reviews: 445,
+    description: 'Non-slip yoga mat with carrying strap',
+    colors: ['Purple', 'Blue', 'Green'],
+    inStock: true,
+    discount: 29,
+  },
+];
+
+export const mockFlashSales: FlashSale[] = [
+  {
+    id: '1',
+    product: mockProducts[0],
+    originalPrice: 399.99,
+    salePrice: 299.99,
+    endTime: new Date(Date.now() + 3600000 * 24), // 24 hours from now
+    stockLeft: 15,
+  },
+  {
+    id: '2',
+    product: mockProducts[2],
+    originalPrice: 179.99,
+    salePrice: 129.99,
+    endTime: new Date(Date.now() + 3600000 * 12), // 12 hours from now
+    stockLeft: 8,
+  },
+];

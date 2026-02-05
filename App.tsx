@@ -1,20 +1,18 @@
-import "./global.css"
-import { Text, View } from "react-native";
+import "./global.css";
 import React from 'react';
-import {  Button } from 'react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import { NavigationContainer } from '@react-navigation/native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { BottomTabNavigator } from './src/navigation';
 
 export default function App() {
-  const offset = useSharedValue(0);
-
-  const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{ translateX: offset.value }],
-  }));
-
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Animated.View style={[{ width: 100, height: 100, backgroundColor: 'tomato' }, animatedStyles]} />
-      <Button title="Move" onPress={() => { offset.value = withSpring(Math.random() * 300); }} />
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <BottomTabNavigator />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
